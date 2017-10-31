@@ -6,7 +6,7 @@
 using namespace std;
 
 
-/*
+
 //My first thought, the easiest way.
 //Get the next[] table.
 //O(n^2)
@@ -17,7 +17,7 @@ void getNext(char ptr[], int next[], int l)
     int i,j,k,t;
     char *p,*q;
     bool flag;
-    next[0]=-1;
+    for(i=0;i<l;i++) next[i]=-1;
     for(i=1;i<l;i++)
     {
         p = ptr;
@@ -30,22 +30,16 @@ void getNext(char ptr[], int next[], int l)
             t=0;
             while(t+j<l && *p==*q && next[t+j]<=t)
             {
-//                cout<<*p<<" "<<*q<<endl;
-//                cout<<"t:"<<t<<" j:"<<j<<endl;
                 q++;
                 p++;
                 next[t+j]=t;
                 t++;                
-//                cout<<*p<<" "<<*q<<endl;
-//                cout<<"t:"<<t<<" j:"<<j<<endl;
-//                cout<<"---"<<endl;
             }
         }
     }
-
     return;
 }
-*/
+
 
 
 //another way to get the next[] table.
